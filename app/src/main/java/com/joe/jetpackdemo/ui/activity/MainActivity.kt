@@ -27,8 +27,8 @@ PopupMenu.OnMenuItemClickListener{
         val host: NavHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment
         val navController = host.navController
         initBottomNavigationView(bnv_view, navController)
+        //为右上角+号添加点击功能
         more.setOnClickListener {
-            Log.d("Test","11111111111111111")
             var btn: View = findViewById(R.id.more)
             val popup = PopupMenu(this, btn)
             val inflater: MenuInflater = popup.menuInflater
@@ -37,11 +37,12 @@ PopupMenu.OnMenuItemClickListener{
             popup.show()
         }
     }
+    //创建右上角下拉菜单
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.function_menu, menu)
         return true
     }
-
+    //为菜单选项添加点击事件
     override fun onMenuItemClick(item: MenuItem?): Boolean {
         if (item != null) {
             return when(item.itemId){

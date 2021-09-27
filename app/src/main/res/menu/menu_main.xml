@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<item
-		android:id="@+id/courseListFragment"
+		android:id="@+id/courseFragment"
 		android:icon="@drawable/main_ic_market"
 		android:title="课程列表"/>
 

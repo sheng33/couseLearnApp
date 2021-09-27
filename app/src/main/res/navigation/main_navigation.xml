@@ -10,8 +10,7 @@
         android:id="@+id/courseFragment"
         android:name="com.joe.jetpackdemo.ui.fragment.main.CourseFragment"
         android:label="课程页"
-        tools:layout="@layout/course_fragment">
-    </fragment>
+        tools:layout="@layout/course_fragment"/>
 
     <fragment
         android:id="@+id/meFragment"
@@ -20,12 +19,19 @@
         tools:layout="@layout/me_fragment">
     </fragment>
 
-<!--    <fragment-->
-<!--        android:id="@+id/meFragment"-->
-<!--        android:name="com.joe.jetpackdemo.ui.fragment.main.MeFragment"-->
-<!--        android:label="fragment_second"-->
-<!--        tools:layout="@layout/me_fragment">-->
-<!--    </fragment>-->
+    <fragment
+        android:id="@+id/notesFragment"
+        android:name="com.joe.jetpackdemo.ui.fragment.main.NotesFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/notes_fragment">
+    </fragment>
+    <fragment
+        android:id="@+id/learnFragment"
+        android:name="com.joe.jetpackdemo.ui.fragment.main.MeLearnFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/me_learn_fragment">
+    </fragment>
+
 
 
 </navigation>
