@@ -1,0 +1,18 @@
+{
+    "data": [
+        {
+            "courseId": 1,
+            "courseName": "算法设计与分析",
+            "courseContent": "算法设计与分析是高等院校计算机专业、软件工程专业等的一门重要的核心专业课程，是学习密码学、大数据处理技术、人工智能、软件工程等课程的基础",
+            "courseImgUrl": "https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg",
+            "createTime": "2020-01-12"
+        },
+        {
+            "courseId": 2,
+            "courseName": "实用Python程序设计",
+            "courseContent": "本课程最大特点是同类课程罕有的全面，以及全面带来的高实用性。不论您是零基础小白，还是编程老手；不论您专业是文科、理科，还是计算机；不论中小学生还是上班族，都能各取所需，找到适合、有用、能学会，能学好的内容。",
+            "courseImgUrl": "https://edu-image.nosdn.127.net/DE7D6B3A6BD99647CBB2CE836FBA455D.png",
+            "createTime": "2020-05-12"
+        }
+    ]
+}

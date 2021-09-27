@@ -15,7 +15,7 @@ fun bindImageFromUrl(view:ImageView,imageUrl:String?){
         Glide.with(view.context)
             .asBitmap()
             .load(imageUrl)
-            .placeholder(R.drawable.glide_placeholder)
+            .placeholder(null)
             .centerCrop()
             .into(view)
     }

@@ -2,14 +2,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
 	<item
-		android:id="@+id/infoFragment"
+		android:id="@+id/courseListFragment"
 		android:icon="@drawable/main_ic_market"
-		android:title="主页"/>
+		android:title="课程列表"/>
 
 	<item
-		android:id="@+id/marketFragment"
+		android:id="@+id/learnFragment"
 		android:icon="@drawable/main_ic_favorite"
-		android:title="喜欢"/>
+		android:title="我的学习"/>
+
+	<item
+		android:id="@+id/notesFragment"
+		android:icon="@drawable/common_ic_pwd"
+		android:title="笔记"/>
 
 	<item
 		android:id="@+id/meFragment"

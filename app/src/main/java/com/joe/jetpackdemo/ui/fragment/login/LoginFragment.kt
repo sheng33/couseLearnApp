@@ -17,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import com.joe.jetpackdemo.R
 import com.joe.jetpackdemo.common.BaseConstant
 import com.joe.jetpackdemo.databinding.LoginFragmentBinding
+import com.joe.jetpackdemo.ui.activity.MainActivity
 import com.joe.jetpackdemo.utils.AppPrefsUtils
 import com.joe.jetpackdemo.viewmodel.CustomViewModelProvider
 import com.joe.jetpackdemo.viewmodel.LoginModel
@@ -91,11 +92,13 @@ class LoginFragment : Fragment() {
         binding.btnLogin.setOnClickListener {
             loginModel.login()?.observe(this, Observer { user ->
                 user?.let {
+//                    AppPrefsUtils.putLong(BaseConstant.SP_USER_ID, it.id)
+//                    AppPrefsUtils.putString(BaseConstant.SP_USER_NAME, it.account)
                     AppPrefsUtils.putLong(BaseConstant.SP_USER_ID, it.id)
                     AppPrefsUtils.putString(BaseConstant.SP_USER_NAME, it.account)
                     //TODO 登录成功逻辑，跳转页面
-//                    val intent = Intent(context, MainActivity::class.java)
-//                    context!!.startActivity(intent)
+                    val intent = Intent(context, MainActivity::class.java)
+                    context!!.startActivity(intent)
                     Toast.makeText(context, "登录成功！", Toast.LENGTH_SHORT).show()
                 }
             })

@@ -15,9 +15,9 @@ class LoginModel constructor(
     private val repository: UserRepository
 ) : ViewModel() {
 
-    val n = MutableLiveData("")
-    val p = MutableLiveData("")
-    val enable = MutableLiveData(false)
+    val n = MutableLiveData("1")
+    val p = MutableLiveData("1")
+    val enable = MutableLiveData(true)
 
     /*val n = ObservableField<String>("")
     val p = ObservableField<String>("")*/
