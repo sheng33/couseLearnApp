@@ -1,7 +1,6 @@
 package com.joe.jetpackdemo.ui.activity
 
 import android.os.Bundle
-import android.util.Log
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.joe.jetpackdemo.R
+import com.wyt.searchbox.SearchFragment
 import kotlinx.android.synthetic.main.main_activity.*
 
 
@@ -20,7 +20,6 @@ PopupMenu.OnMenuItemClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
         setExitSharedElementCallback(MaterialContainerTransformSharedElementCallback())
-        setSupportActionBar(toolbar)
         window.sharedElementsUseOverlay = false
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -36,6 +35,14 @@ PopupMenu.OnMenuItemClickListener{
             popup.setOnMenuItemClickListener(this@MainActivity)
             popup.show()
         }
+
+        val searchFragment = SearchFragment.newInstance()
+        searchFragment.setOnSearchClickListener { keyword -> //这里处理逻辑
+            Toast.makeText(this@MainActivity, keyword, Toast.LENGTH_SHORT).show()
+        }
+        search.setOnClickListener {
+            searchFragment.showFragment(supportFragmentManager,SearchFragment.TAG);
+        }
     }
     //创建右上角下拉菜单
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
@@ -50,11 +57,11 @@ PopupMenu.OnMenuItemClickListener{
                     Toast.makeText(this, "扫一扫", Toast.LENGTH_SHORT).show()
                     true
                 }
-                R.id.stuSign->{
+                R.id.stuSign -> {
                     Toast.makeText(this, "签到", Toast.LENGTH_SHORT).show()
                     true
                 }
-                R.id.invite ->{
+                R.id.invite -> {
                     Toast.makeText(this, "邀请码", Toast.LENGTH_SHORT).show()
                     true
                 }

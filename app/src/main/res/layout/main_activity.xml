@@ -37,6 +37,14 @@
                 android:layout_height="match_parent"
                 android:layout_weight="1" />
             <ImageView
+                android:id="@+id/search"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:padding="10px"
+                android:src="@drawable/ic_menu_search"
+                android:textSize="15sp"
+                android:visibility="visible"/>
+            <ImageView
                 android:id="@+id/more"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
