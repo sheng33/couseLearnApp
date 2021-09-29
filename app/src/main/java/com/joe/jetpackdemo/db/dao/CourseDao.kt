@@ -3,7 +3,6 @@ package com.joe.jetpackdemo.db.dao
 import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.joe.jetpackdemo.db.data.Course
-import com.joe.jetpackdemo.db.data.User
 
 @Dao
 interface CourseDao {
@@ -11,8 +10,10 @@ interface CourseDao {
     fun findCourseById(id:Long): LiveData<Course>
     @Query("SELECT * FROM course")
     fun getAllCourse():List<Course>
-    @Insert
-    fun insertCourse(course: Course):Long
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertCourse(course: List<Course>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertCourse(course: Course)
     @Delete
     fun deleteCourse(course: Course)
     @Update

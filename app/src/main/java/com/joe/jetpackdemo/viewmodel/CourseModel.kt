@@ -1,16 +1,15 @@
 package com.joe.jetpackdemo.viewmodel
 
+import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
-import com.joe.jetpackdemo.db.repository.UserRepository
-import kotlinx.coroutines.launch
+import com.joe.jetpackdemo.db.data.Course
 
 
 class CourseModel constructor(
-    private val repository: UserRepository
+    val course: Course
 ) : ViewModel() {
     var list = MutableLiveData<ArrayList<String>>()
-
-
+    var requestBtnClickListener: View.OnClickListener? = null
 }
