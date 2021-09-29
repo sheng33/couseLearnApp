@@ -103,5 +103,5 @@ dependencies {
 
     // implementation("com.louiscad.splitties:splitties-arch-lifecycle:3.0.0-beta01")
     implementation 'com.wenwenwen888:searchbox:1.0.1'
-
+    implementation 'com.ramotion.foldingcell:folding-cell:1.2.3'
 }
