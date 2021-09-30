@@ -20,20 +20,14 @@ class CourseRepository private constructor(private val courseDao: CourseDao){
     /**
      * 测试数据
      */
-    fun getTestingListmodel(): ArrayList<CourseModel>? {
-        val items = ArrayList<CourseModel>()
-        items.add(CourseModel(Course("计算机科学与技术1","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21")))
-        items.add(CourseModel(Course("计算机科学与技术2","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21")))
-        items.add(CourseModel(Course("计算机科学与技术3","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21")))
-        return items
-    }
-    fun getTestingList(): ArrayList<Course>? {
+    fun getTestingListmodel(): ArrayList<Course>? {
         val items = ArrayList<Course>()
         items.add(Course("计算机科学与技术1","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
         items.add(Course("计算机科学与技术2","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
         items.add(Course("计算机科学与技术3","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
         return items
     }
+
     companion object {
         @Volatile
         private var instance: CourseRepository? = null

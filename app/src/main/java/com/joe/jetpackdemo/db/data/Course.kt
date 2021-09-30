@@ -3,6 +3,7 @@ package com.joe.jetpackdemo.db.data
 import android.view.View
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Ignore
 import androidx.room.PrimaryKey
 import java.util.*
 
@@ -16,6 +17,8 @@ data class Course(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "courseId")
     var id: Long = 0
+    @Ignore
+    var requestBtnClickListener: View.OnClickListener? = null
 
 
     override fun equals(other: Any?): Boolean {
