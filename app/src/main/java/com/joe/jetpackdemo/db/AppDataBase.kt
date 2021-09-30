@@ -17,7 +17,7 @@ import com.joe.jetpackdemo.worker.CourseWorker
 /**
  * 数据库文件
  */
-@Database(entities = [User::class, Course::class],version = 2,exportSchema = false)
+@Database(entities = [User::class, Course::class],version = 3,exportSchema = false)
 @TypeConverters(Converters::class)
 abstract class AppDataBase:RoomDatabase() {
     // 得到UserDao

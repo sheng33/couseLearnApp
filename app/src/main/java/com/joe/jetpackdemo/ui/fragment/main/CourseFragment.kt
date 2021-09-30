@@ -40,7 +40,7 @@ class CourseFragment : Fragment() {
         // prepare elements to display
 
         // prepare elements to display
-        val items: ArrayList<CourseModel>? = courseRepository.getTestingListmodel()
+        val items: ArrayList<Course>? = courseRepository.getTestingListmodel()
 
         // add custom btn handler to first list item
 

@@ -14,7 +14,7 @@ import com.joe.jetpackdemo.viewmodel.CourseModel
 import com.ramotion.foldingcell.FoldingCell
 import java.util.*
 
-class CourseCellAdapter(context: Context?, objects: List<CourseModel?>?) : ArrayAdapter<CourseModel>(context, 0, objects) {
+class CourseCellAdapter(context: Context?, objects: List<Course?>?) : ArrayAdapter<Course>(context, 0, objects) {
     private val unfoldedIndexes = HashSet<Int>()
     var defaultRequestBtnClickListener: View.OnClickListener? = null
 
@@ -44,7 +44,7 @@ class CourseCellAdapter(context: Context?, objects: List<CourseModel?>?) : Array
         }
         if (null == item) return cell
         // bind data from selected element to view through view holder
-        bindImageFromUrl(viewHolder.cellImg!!, item.course.imgUrl)
+        bindImageFromUrl(viewHolder.cellImg!!, item.imgUrl)
         //        viewHolder.cellImg.setImageURI(item.getCellImg());
         // set custom btn handler for list item from that item
        if(item.requestBtnClickListener!=null){
