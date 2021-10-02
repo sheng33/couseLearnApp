@@ -2,14 +2,21 @@ package com.joe.jetpackdemo.ui.activity
 
 import android.Manifest
 import android.content.pm.PackageManager
-import androidx.appcompat.app.AppCompatActivity
+import android.content.res.AssetManager
+import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
-import androidx.lifecycle.lifecycleScope
 import com.joe.jetpackdemo.R
+import site.gemus.openingstartanimation.LineDrawStrategy
+import site.gemus.openingstartanimation.NormalDrawStrategy
+import site.gemus.openingstartanimation.OpeningStartAnimation
+import site.gemus.openingstartanimation.RedYellowBlueDrawStrategy
+import java.io.InputStream
 import java.util.*
+
 
 class LoginActivity : AppCompatActivity() {
 
@@ -31,7 +38,15 @@ class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.login_activity)
-
+        val openingStartAnimation = OpeningStartAnimation.Builder(this)
+            .setDrawStategy(NormalDrawStrategy()) //设置动画效果
+            .setAppIcon(getDrawable(R.mipmap.logo))
+            .setAnimationInterval(3000)
+            .setAnimationFinishTime(3000)
+            .setAppName("爱芝士在线学习课堂")
+            .setAppStatement("一个没用的app")
+            .create()
+        openingStartAnimation.show(this)
         /*val host:NavHostFragment = supportFragmentManager.findFragmentById(R.id.my_nav_host_fragment) as NavHostFragment
         navController = host.navController*/
 

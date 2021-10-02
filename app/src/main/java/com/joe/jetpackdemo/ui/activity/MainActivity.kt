@@ -1,16 +1,19 @@
 package com.joe.jetpackdemo.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
+import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.joe.jetpackdemo.R
+import com.joe.jetpackdemo.ui.fragment.main.SignFragment
 import com.wyt.searchbox.SearchFragment
 import kotlinx.android.synthetic.main.main_activity.*
 
@@ -35,13 +38,12 @@ PopupMenu.OnMenuItemClickListener{
             popup.setOnMenuItemClickListener(this@MainActivity)
             popup.show()
         }
-
         val searchFragment = SearchFragment.newInstance()
         searchFragment.setOnSearchClickListener { keyword -> //这里处理逻辑
             Toast.makeText(this@MainActivity, keyword, Toast.LENGTH_SHORT).show()
         }
         search.setOnClickListener {
-            searchFragment.showFragment(supportFragmentManager,SearchFragment.TAG);
+            searchFragment.showFragment(supportFragmentManager, SearchFragment.TAG);
         }
     }
     //创建右上角下拉菜单
@@ -65,6 +67,13 @@ PopupMenu.OnMenuItemClickListener{
                     Toast.makeText(this, "邀请码", Toast.LENGTH_SHORT).show()
                     true
                 }
+                R.id.teaSign -> {
+                    val intent = Intent(this,
+                            SignActivity::class.java)
+                    startActivity(intent)
+                    Toast.makeText(this, "老师开启签到", Toast.LENGTH_SHORT).show()
+                    true
+                }
                 else -> false
             }
         }
@@ -74,16 +83,16 @@ PopupMenu.OnMenuItemClickListener{
      * Navigation绑定bottomNavigationView
      */
     private fun initBottomNavigationView(
-        bottomNavigationView: BottomNavigationView,
-        navController: NavController
+            bottomNavigationView: BottomNavigationView,
+            navController: NavController
     ) {
         bottomNavigationView.setupWithNavController(navController)
-//        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
 //            when(destination.id){
 //                //当处于“我”界面时，显示右上角+号
 //                R.id.meFragment -> more.visibility = View.VISIBLE
 //                else -> more.visibility = View.GONE
 //            }
-//        }
+        }
     }
 }
