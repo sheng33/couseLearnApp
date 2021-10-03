@@ -108,4 +108,7 @@ dependencies {
 
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'site.gemus:openingstartanimation:1.0.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    implementation 'jp.wasabeef:glide-transformations:4.0.1'
 }

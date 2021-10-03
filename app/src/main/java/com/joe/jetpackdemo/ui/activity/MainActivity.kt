@@ -88,11 +88,11 @@ PopupMenu.OnMenuItemClickListener{
     ) {
         bottomNavigationView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
-//            when(destination.id){
-//                //当处于“我”界面时，显示右上角+号
-//                R.id.meFragment -> more.visibility = View.VISIBLE
-//                else -> more.visibility = View.GONE
-//            }
+            when(destination.id){
+                //当处于“我”界面时，显示右上角+号
+                R.id.courseFragment -> search.visibility = View.VISIBLE
+                else -> search.visibility = View.GONE
+            }
         }
     }
 }

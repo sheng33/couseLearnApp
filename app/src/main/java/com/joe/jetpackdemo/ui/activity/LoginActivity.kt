@@ -41,8 +41,8 @@ class LoginActivity : AppCompatActivity() {
         val openingStartAnimation = OpeningStartAnimation.Builder(this)
             .setDrawStategy(NormalDrawStrategy()) //设置动画效果
             .setAppIcon(getDrawable(R.mipmap.logo))
-            .setAnimationInterval(3000)
-            .setAnimationFinishTime(3000)
+            .setAnimationInterval(2000)
+            .setAnimationFinishTime(1200)
             .setAppName("爱芝士在线学习课堂")
             .setAppStatement("一个没用的app")
             .create()
