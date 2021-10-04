@@ -93,22 +93,43 @@ PopupMenu.OnMenuItemClickListener{
                 R.id.courseFragment ->{
                     mainTitle.setText("课程列表")
                     search.visibility = View.VISIBLE
-                    searchZ.visibility = View.GONE
+                    search0.visibility = View.GONE
+                    search1.visibility = View.GONE
+                    search2.visibility = View.GONE
+                    more.visibility = View.VISIBLE
+                    edit.visibility = View.GONE
                 }
                 R.id.meFragment ->{
                     mainTitle.setText("个人界面")
                     search.visibility = View.GONE
-                    searchZ.visibility = View.VISIBLE
+                    more.visibility = View.GONE
+                    search0.visibility = View.VISIBLE
+                    search1.visibility = View.GONE
+                    search2.visibility = View.VISIBLE
+                    edit.visibility = View.GONE
+
+
                 }
                 R.id.notesFragment ->{
                     mainTitle.setText("笔记")
                     search.visibility = View.GONE
-                    searchZ.visibility = View.VISIBLE
+                    search0.visibility = View.VISIBLE
+                    search1.visibility = View.GONE
+                    search2.visibility = View.GONE
+                    more.visibility = View.GONE
+                    edit.visibility = View.VISIBLE
+
                 }
                 R.id.learnFragment ->{
                     mainTitle.setText("我的学习")
                     search.visibility = View.VISIBLE
-                    searchZ.visibility = View.GONE
+                    search0.visibility = View.VISIBLE
+                    search1.visibility = View.GONE
+                    search2.visibility = View.GONE
+                    more.visibility = View.GONE
+                    edit.visibility = View.GONE
+
+
                 }
             }
         }

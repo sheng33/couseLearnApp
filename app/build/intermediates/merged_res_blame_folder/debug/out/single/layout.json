@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\me_fragment.xml",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\me_fragment.xml"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\notes_fragment.xml",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\notes_fragment.xml"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\course_fragment.xml",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\course_fragment.xml"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\login_fragment.xml",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\login_fragment.xml"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\register_fragment.xml",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\register_fragment.xml"
+    }
+]

@@ -4,7 +4,16 @@
     <color name="colorPrimaryDark">#2196F3</color>
     <color name="colorAccent">#D81B60</color>
 
-
+    <!-- 标准背景色 -->
+    <color name="stand_backgroud">#F4F4F4</color>
+    <!-- 黑色 -->
+    <color name="black">#333333</color>
+    <!-- gray -->
+    <color name="gray">#E5E5E5</color>
+    <!-- 白色 -->
+    <color name="white">#FFFFFF</color>
+    <color name="light_gray">#B3B3B3</color>
+    <color name="time_gray">#808080</color>
     <color name="themeColor">#9E9E9E</color>
 
     <color name="textPrimary">#4e5864</color>
@@ -25,5 +34,17 @@
     <color name="mainTextColor">#343d43</color>
     <color name="btnRequest">#ffbf12</color>
 
+    <color name="text_color">#333333</color>
+
+    <color name="red_normal">#FF0000</color>
+    <color name="red_pressed">#FF6666</color>
+    <color name="green_normal">#37C000</color>
+    <color name="green_pressed">#30A070</color>
+    <color name="purple_normal">#9932CC</color>
+    <color name="purple_pressed">#9F79EE</color>
+
+    <color name="white_pressed">#CFCFCF</color>
+
+    <color name="divider_color">#B7B2B2</color>
     <color name="black_overlay">#66000000</color>
 </resources>
