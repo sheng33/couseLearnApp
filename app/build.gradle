@@ -9,6 +9,8 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.joe.jetpackdemo"
+        renderscriptTargetApi 19
+        renderscriptSupportModeEnabled true
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
@@ -111,4 +113,5 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.10.0'
     implementation 'jp.wasabeef:glide-transformations:4.0.1'
+    implementation 'com.github.jrvansuita:GaussianBlur:1.0.3'
 }

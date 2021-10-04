@@ -90,8 +90,26 @@ PopupMenu.OnMenuItemClickListener{
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when(destination.id){
                 //当处于“我”界面时，显示右上角+号
-                R.id.courseFragment -> search.visibility = View.VISIBLE
-                else -> search.visibility = View.GONE
+                R.id.courseFragment ->{
+                    mainTitle.setText("课程列表")
+                    search.visibility = View.VISIBLE
+                    searchZ.visibility = View.GONE
+                }
+                R.id.meFragment ->{
+                    mainTitle.setText("个人界面")
+                    search.visibility = View.GONE
+                    searchZ.visibility = View.VISIBLE
+                }
+                R.id.notesFragment ->{
+                    mainTitle.setText("笔记")
+                    search.visibility = View.GONE
+                    searchZ.visibility = View.VISIBLE
+                }
+                R.id.learnFragment ->{
+                    mainTitle.setText("我的学习")
+                    search.visibility = View.VISIBLE
+                    searchZ.visibility = View.GONE
+                }
             }
         }
     }
