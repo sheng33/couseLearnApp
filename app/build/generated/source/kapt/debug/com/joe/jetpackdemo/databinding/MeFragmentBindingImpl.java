@@ -23,7 +23,7 @@ public class MeFragmentBindingImpl extends MeFragmentBinding  {
         sViewsWithIds.put(R.id.zhanghao, 7);
         sViewsWithIds.put(R.id.courseBtn, 8);
         sViewsWithIds.put(R.id.kecheng, 9);
-        sViewsWithIds.put(R.id.setBtn, 10);
+        sViewsWithIds.put(R.id.about, 10);
         sViewsWithIds.put(R.id.shezhi, 11);
     }
     // views
@@ -39,12 +39,12 @@ public class MeFragmentBindingImpl extends MeFragmentBinding  {
     }
     private MeFragmentBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
+            , (android.widget.RelativeLayout) bindings[10]
             , (android.widget.RelativeLayout) bindings[8]
             , (android.widget.ImageView) bindings[2]
             , (com.joe.jetpackdemo.utils.RoundImageView) bindings[3]
             , (android.widget.RelativeLayout) bindings[1]
             , (com.joe.jetpackdemo.utils.RoundImageView) bindings[9]
-            , (android.widget.RelativeLayout) bindings[10]
             , (com.joe.jetpackdemo.utils.RoundImageView) bindings[11]
             , (android.widget.RelativeLayout) bindings[6]
             , (android.widget.TextView) bindings[4]

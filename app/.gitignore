@@ -2,6 +2,9 @@
 ../.gradle
 /.idea
 ../.idea
-../.gradle
 ./build
-
+../app/build/
+../app/build
+/build
+build
+sampledata

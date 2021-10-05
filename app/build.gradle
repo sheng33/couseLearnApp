@@ -115,4 +115,7 @@ dependencies {
     implementation 'jp.wasabeef:glide-transformations:4.0.1'
     implementation 'com.github.jrvansuita:GaussianBlur:1.0.3'
     implementation 'com.yanzhenjie.recyclerview:x:1.3.2'
+    implementation 'com.robertlevonyan.view:MaterialChipView:2.1.7'
+    // 关于界面
+    implementation 'io.github.medyo:android-about-page:2.0.0'
 }

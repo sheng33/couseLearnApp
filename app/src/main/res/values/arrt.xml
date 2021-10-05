@@ -20,4 +20,7 @@
         <attr name="borderRadius"/>
         <attr name="type"/>
     </declare-styleable>
+    <declare-styleable name="ExpandableTextView">
+        <attr name="trimLength" format="integer" />
+    </declare-styleable>
 </resources>

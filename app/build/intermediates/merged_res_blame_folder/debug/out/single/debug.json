@@ -4,12 +4,12 @@
         "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\cell_title_layout.xml"
     },
     {
-        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_open.xml.flat",
-        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\ic_add_open.xml"
-    },
-    {
         "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_drawer_search.png.flat",
         "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\drawer_search.png"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_add_open.xml.flat",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\ic_add_open.xml"
     },
     {
         "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxhdpi_ic_launcher.png.flat",
@@ -64,6 +64,10 @@
         "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\notes_list.xml"
     },
     {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_shezhi.xml.flat",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\ic_shezhi.xml"
+    },
+    {
         "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_bv_loading_rotate_pull_re.xml.flat",
         "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\bv_loading_rotate_pull_re.xml"
     },
@@ -90,6 +94,10 @@
     {
         "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\layout_login_activity.xml.flat",
         "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\layout\\login_activity.xml"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_me_shezhi.xml.flat",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\me_shezhi.xml"
     },
     {
         "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\layout_cell.xml.flat",
@@ -230,6 +238,14 @@
     {
         "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_loading.png.flat",
         "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\loading.png"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_head_text.png.flat",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\head_text.png"
+    },
+    {
+        "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\drawable_about.png.flat",
+        "source": "E:\\code\\Android Sources\\kotlin_hoo\\app\\src\\main\\res\\drawable\\about.png"
     },
     {
         "merged": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\res\\merged\\debug\\navigation_login_navigation.xml.flat",

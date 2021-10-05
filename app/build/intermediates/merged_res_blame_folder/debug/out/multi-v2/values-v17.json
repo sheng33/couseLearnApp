@@ -4,7 +4,7 @@
             "outputFile": "E:\\code\\Android Sources\\kotlin_hoo\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v17\\values-v17.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\shengQ\\.gradle\\caches\\transforms-2\\files-2.1\\a8003a4c355da38bcbc0585283902c8c\\appcompat-1.2.0\\res\\values-v17\\values-v17.xml",
+                    "source": "C:\\Users\\shengQ\\.gradle\\caches\\transforms-2\\files-2.1\\b78679cb531f3834753a3982931d9bf2\\appcompat-1.3.0\\res\\values-v17\\values-v17.xml",
                     "from": {
                         "startLines": "2,5,9,12,15,18,22,25,29,33,37,40,43,46,50,53,57",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",

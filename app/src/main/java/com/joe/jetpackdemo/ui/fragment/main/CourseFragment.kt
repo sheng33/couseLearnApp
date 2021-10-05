@@ -76,8 +76,6 @@ class CourseFragment : Fragment() {
         theListView.adapter = adapter
 
         // set on click event listener to list view
-
-        // set on click event listener to list view
         theListView.onItemClickListener =
             OnItemClickListener { adapterView, view, pos, l -> // toggle clicked cell state
                 (view as FoldingCell).toggle(false)

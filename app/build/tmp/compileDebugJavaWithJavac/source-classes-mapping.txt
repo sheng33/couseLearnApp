@@ -72,8 +72,13 @@ com/joe/jetpackdemo/databinding/LoginFragmentBinding.java
  com.joe.jetpackdemo.databinding.LoginFragmentBinding
 com/joe/jetpackdemo/db/data/Chapter.java
  com.joe.jetpackdemo.db.data.Chapter
+com/joe/jetpackdemo/widget/ExpandableTextView.java
+ com.joe.jetpackdemo.widget.ExpandableTextView
+ com.joe.jetpackdemo.widget.ExpandableTextView$1
 com/joe/jetpackdemo/databinding/NotesFragmentBinding.java
  com.joe.jetpackdemo.databinding.NotesFragmentBinding
+com/joe/jetpackdemo/ui/fragment/main/MeFragmentDirections.java
+ com.joe.jetpackdemo.ui.fragment.main.MeFragmentDirections
 com/joe/jetpackdemo/widget/SearchBar.java
  com.joe.jetpackdemo.widget.SearchBar
  com.joe.jetpackdemo.widget.SearchBar$1

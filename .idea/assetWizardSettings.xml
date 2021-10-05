@@ -19,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="main_t_edit" />
-                            <entry key="sourceFile" value="C:\Users\shengQ\Downloads\编辑.svg" />
+                            <entry key="outputName" value="ic_shezhi" />
+                            <entry key="sourceFile" value="E:\code\Android Sources\kotlin_hoo\app\src\main\assets\down\shezhi.svg" />
                           </map>
                         </option>
                       </PersistentState>

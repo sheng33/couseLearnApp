@@ -21,6 +21,9 @@ import java.lang.Object;
 
 public abstract class MeFragmentBinding extends ViewDataBinding {
   @NonNull
+  public final RelativeLayout about;
+
+  @NonNull
   public final RelativeLayout courseBtn;
 
   @NonNull
@@ -34,9 +37,6 @@ public abstract class MeFragmentBinding extends ViewDataBinding {
 
   @NonNull
   public final RoundImageView kecheng;
-
-  @NonNull
-  public final RelativeLayout setBtn;
 
   @NonNull
   public final RoundImageView shezhi;
@@ -60,16 +60,16 @@ public abstract class MeFragmentBinding extends ViewDataBinding {
   protected FragmentActivity mActivity;
 
   protected MeFragmentBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      RelativeLayout courseBtn, ImageView hBack, RoundImageView hHead, RelativeLayout headLayout,
-      RoundImageView kecheng, RelativeLayout setBtn, RoundImageView shezhi, RelativeLayout userBtn,
-      TextView userName, TextView userVal, RoundImageView zhanghao) {
+      RelativeLayout about, RelativeLayout courseBtn, ImageView hBack, RoundImageView hHead,
+      RelativeLayout headLayout, RoundImageView kecheng, RoundImageView shezhi,
+      RelativeLayout userBtn, TextView userName, TextView userVal, RoundImageView zhanghao) {
     super(_bindingComponent, _root, _localFieldCount);
+    this.about = about;
     this.courseBtn = courseBtn;
     this.hBack = hBack;
     this.hHead = hHead;
     this.headLayout = headLayout;
     this.kecheng = kecheng;
-    this.setBtn = setBtn;
     this.shezhi = shezhi;
     this.userBtn = userBtn;
     this.userName = userName;

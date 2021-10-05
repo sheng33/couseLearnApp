@@ -19,6 +19,9 @@ import com.joe.jetpackdemo.viewmodel.NotesModel
 import com.yanzhenjie.recyclerview.SwipeRecyclerView
 import kotlinx.android.synthetic.main.notes_fragment.*
 import kotlinx.android.synthetic.main.notes_search.*
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.*
 
 class NotesFragment : Fragment()  {
@@ -47,9 +50,11 @@ class NotesFragment : Fragment()  {
      * 刷新。
      */
     private val mRefreshListener = SwipeRefreshLayout.OnRefreshListener {
-        refresh_layout.postDelayed({ loadData()  }, 1000) // 延时模拟请求服务器。
-        refresh_layout.isRefreshing = false
-
+        refresh_layout.postDelayed({ loadData()  }, 2000) // 延时模拟请求服务器。
+        GlobalScope.launch {
+            delay(2000L)
+            refresh_layout.isRefreshing = false
+        }
     }
     private fun loadData() {
 //        mDataList = createDataList(0)

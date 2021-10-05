@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/norm_grey"
+    android:orientation="vertical"
+    android:visibility="visible"
+    tools:context=".ui.activity.MainActivity"
+    tools:visibility="visible">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="#ffffff"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:orientation="horizontal">
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/mainTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:padding="4dp"
+                android:layout_weight="2"
+                android:text="课程列表"
+                android:textColor="#ffffff"
+                android:textSize="24sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:id="@+id/search0"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+            <ImageView
+                android:id="@+id/search"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="10px"
+                android:src="@drawable/main_search"
+                android:layout_gravity="center_vertical"
+                android:textSize="15sp"
+                android:visibility="visible"/>
+            <Space
+                android:id="@+id/search1"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+            <ImageView
+                android:id="@+id/more"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="10px"
+                android:src="@drawable/ic_add_open"
+                android:textSize="28dp"
+                android:visibility="visible"/>
+            <Space
+                android:id="@+id/search2"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:visibility="gone"/>
+            <ImageView
+                android:id="@+id/edit"
+                android:layout_width="50dp"
+                android:layout_height="match_parent"
+                android:padding="10px"
+                android:src="@drawable/main_t_edit"
+                android:textSize="28dp"
+                android:visibility="visible"/>
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+    <fragment
+        android:id="@+id/my_nav_host_fragment"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="10dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/main_navigation" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bnv_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:textAlignment="center"
+        app:itemIconTint="@drawable/main_bottom_color_selector"
+        app:itemTextColor="@drawable/main_bottom_color_selector"
+        app:menu="@menu/menu_main" />
+
+</LinearLayout>

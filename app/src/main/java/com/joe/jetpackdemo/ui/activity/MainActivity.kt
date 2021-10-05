@@ -98,6 +98,7 @@ PopupMenu.OnMenuItemClickListener{
                     search2.visibility = View.GONE
                     more.visibility = View.VISIBLE
                     edit.visibility = View.GONE
+                    set.visibility = View.GONE
                 }
                 R.id.meFragment ->{
                     mainTitle.setText("个人界面")
@@ -105,10 +106,9 @@ PopupMenu.OnMenuItemClickListener{
                     more.visibility = View.GONE
                     search0.visibility = View.VISIBLE
                     search1.visibility = View.GONE
-                    search2.visibility = View.VISIBLE
+                    search2.visibility = View.GONE
                     edit.visibility = View.GONE
-
-
+                    set.visibility = View.VISIBLE
                 }
                 R.id.notesFragment ->{
                     mainTitle.setText("笔记")
@@ -118,6 +118,8 @@ PopupMenu.OnMenuItemClickListener{
                     search2.visibility = View.GONE
                     more.visibility = View.GONE
                     edit.visibility = View.VISIBLE
+                    set.visibility = View.GONE
+
 
                 }
                 R.id.learnFragment ->{
@@ -128,6 +130,7 @@ PopupMenu.OnMenuItemClickListener{
                     search2.visibility = View.GONE
                     more.visibility = View.GONE
                     edit.visibility = View.GONE
+                    set.visibility = View.GONE
 
 
                 }
