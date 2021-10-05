@@ -1,1 +1,0 @@
-[{"navFile":"src\\main\\res\\navigation\\login_navigation.xml","javaFiles":["com.joe.jetpackdemo.ui.fragment.login.LoginFragmentDirections","com.joe.jetpackdemo.ui.fragment.login.RegisterFragmentArgs"]},{"navFile":"src\\main\\res\\navigation\\main_navigation.xml","javaFiles":[]}]
