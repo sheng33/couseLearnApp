@@ -1,10 +1,10 @@
 ../build
-../.gradle
+../.gradle/
 /.idea
 ../.idea
 ./build
 ../app/build/
-../app/build
 /build
-build
+build/
 sampledata
+../build/
