@@ -13,5 +13,8 @@
         android:id="@+id/invite"
         android:icon="@drawable/main_ic_market"
         android:title="邀请码"/>
-
+    <item
+        android:id="@+id/teaSign"
+        android:icon="@drawable/main_ic_market"
+        android:title="开启签到"/>
 </menu>

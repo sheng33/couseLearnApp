@@ -3,6 +3,11 @@
   <component name="WizardSettings">
     <option name="children">
       <map>
+        <entry key="imageWizard">
+          <value>
+            <PersistentState />
+          </value>
+        </entry>
         <entry key="vectorWizard">
           <value>
             <PersistentState>
@@ -14,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="main_more_btn1" />
-                            <entry key="sourceFile" value="C:\Users\shengQ\Downloads\加号.svg" />
+                            <entry key="outputName" value="ic_shezhi" />
+                            <entry key="sourceFile" value="E:\code\Android Sources\kotlin_hoo\app\src\main\assets\down\shezhi.svg" />
                           </map>
                         </option>
                       </PersistentState>

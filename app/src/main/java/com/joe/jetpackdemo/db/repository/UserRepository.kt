@@ -49,7 +49,6 @@ class UserRepository private constructor(private val userDao: UserDao) {
     companion object {
         @Volatile
         private var instance: UserRepository? = null
-
         fun getInstance(userDao: UserDao): UserRepository =
             instance ?: synchronized(this) {
                 instance
@@ -57,6 +56,5 @@ class UserRepository private constructor(private val userDao: UserDao) {
                     instance = it
                 }
             }
-
     }
 }

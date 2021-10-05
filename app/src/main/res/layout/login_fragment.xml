@@ -9,11 +9,9 @@
 			name="model"
 			type="com.joe.jetpackdemo.viewmodel.LoginModel"
 			/>
-
 		<variable
 			name="activity"
 			type="androidx.fragment.app.FragmentActivity"/>
-
 		<import type="android.view.View"/>
 	</data>
 

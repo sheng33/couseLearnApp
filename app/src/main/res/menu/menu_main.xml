@@ -3,17 +3,17 @@
 
 	<item
 		android:id="@+id/courseFragment"
-		android:icon="@drawable/main_ic_market"
+		android:icon="@drawable/lianxi"
 		android:title="课程列表"/>
 
 	<item
 		android:id="@+id/learnFragment"
-		android:icon="@drawable/main_ic_favorite"
+		android:icon="@drawable/xihuan"
 		android:title="我的学习"/>
 
 	<item
 		android:id="@+id/notesFragment"
-		android:icon="@drawable/common_ic_pwd"
+		android:icon="@drawable/biaoshu"
 		android:title="笔记"/>
 
 	<item

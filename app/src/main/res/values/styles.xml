@@ -8,5 +8,48 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:textColor">@color/colorPrimary</item>
     </style>
+    <style name="ContentImageBadgeTitle" parent="AppTheme">
+        <item name="android:alpha">0.5</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+
+    <style name="ContentImageBadgeText" parent="AppTheme">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:textStyle">bold</item>
+
+    </style>
+
+    <style name="ContentMainBadgeTitle" parent="AppTheme">
+        <item name="android:textColor">@color/contentBadgeTitle</item>
+        <item name="android:textSize">16dp</item>
+    </style>
+
+    <style name="TitleBadgeText" parent="AppTheme">
+        <item name="android:textColor">@color/titleBadgeText</item>
+        <item name="android:textSize">20dp</item>
+    </style>
+
+    <style name="TitleBadgeTitle" parent="AppTheme">
+        <item name="android:textColor">@color/titleBadgeTitle</item>
+        <item name="android:textSize">12dp</item>
+    </style>
+    <!-- Define a global style for AboutPage in your 'styles.xml' -->
+    <style name="Widget.App.AboutPage" parent="about_About">
+        <item name="aboutBackground">#ffffff</item>
+        <item name="aboutElementIconTint">#333333</item>
+        <item name="aboutSeparatorColor">#999999</item>
+        <item name="aboutDescriptionTextAppearance">@style/TextAppearance.App.AboutPage.Description</item>
+
+        <!-- similarly, you can also apply the following text appearances -->
+        <item name="aboutElementTextAppearance">@style/about_elementTextAppearance.Dark</item>
+        <item name="aboutGroupTextAppearance">@style/about_groupTextAppearance</item>
+    </style>
+
+    <style name="TextAppearance.App.AboutPage.Description" parent="about_descriptionTextAppearance.Dark">
+        <item name="android:textStyle">bold|italic</item>
+    </style>
+
 
 </resources>

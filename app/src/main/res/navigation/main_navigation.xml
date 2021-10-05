@@ -17,6 +17,9 @@
         android:name="com.joe.jetpackdemo.ui.fragment.main.MeFragment"
         android:label="fragment_first"
         tools:layout="@layout/me_fragment">
+        <action
+            android:id="@+id/action_meFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
     </fragment>
 
     <fragment
@@ -31,7 +34,10 @@
         android:label="fragment_second"
         tools:layout="@layout/me_learn_fragment">
     </fragment>
-
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.joe.jetpackdemo.ui.fragment.main.me.AboutFragment"
+        android:label="AboutFragment" />
 
 
 </navigation>
