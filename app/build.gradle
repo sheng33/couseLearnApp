@@ -118,4 +118,10 @@ dependencies {
     implementation 'com.robertlevonyan.view:MaterialChipView:2.1.7'
     // 关于界面
     implementation 'io.github.medyo:android-about-page:2.0.0'
+    //video
+    implementation 'org.salient.artvideoplayer:artplayer-core:1.1.0'
+    implementation "org.salient.artvideoplayer:artplayer-exo:1.1.0"
+    implementation "org.salient.artvideoplayer:artplayer-arm64:1.1.0"
+    implementation "org.salient.artvideoplayer:artplayer-x86_64:1.0.0"
+    implementation "com.google.android.exoplayer:exoplayer-hls:2.8.0"
 }

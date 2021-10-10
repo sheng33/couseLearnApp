@@ -1,5 +1,6 @@
 package com.joe.jetpackdemo.ui.fragment.main
 
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,7 +20,10 @@ import com.joe.jetpackdemo.ui.adapter.CourseAdapter
 import com.joe.jetpackdemo.ui.adapter.CourseCellAdapter
 import com.joe.jetpackdemo.viewmodel.CourseModel
 import com.ramotion.foldingcell.FoldingCell
+import org.salient.artplayer.MediaPlayerManager
+import org.salient.artplayer.player.SystemMediaPlayer
 import java.util.*
+import org.salient.artplayer.ui.VideoView
 
 class CourseFragment : Fragment() {
     lateinit var courseModel: CourseModel
@@ -53,11 +57,13 @@ class CourseFragment : Fragment() {
             ).show()
 
         }
+
+
         Log.d("SSSS",items!![0].requestBtnClickListener.toString())
         // create custom adapter that holds elements and their state (we need hold a id's of unfolded elements for reusable elements)
 
         // create custom adapter that holds elements and their state (we need hold a id's of unfolded elements for reusable elements)
-        val adapter = CourseCellAdapter(this.context, items)
+        val adapter = CourseCellAdapter(this.context, items,this.activity)
 
         // add default btn handler for each request btn on each item if custom handler not found
 
@@ -82,8 +88,13 @@ class CourseFragment : Fragment() {
                 // register in adapter that state for selected cell is toggled
                 adapter.registerToggle(pos)
             }
-
-
         return binding.root
     }
+    //拦截全屏时的返回事件
+//    override fun onBackPressed() {
+//        if (MediaPlayerManager.blockBackPress(this)) {
+//            return
+//        }
+//        super.onBackPressed()
+//    }
 }

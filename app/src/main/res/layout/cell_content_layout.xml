@@ -46,15 +46,13 @@
 
     <!-- content header image -->
     <RelativeLayout
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/head_image"
+        <org.salient.artplayer.ui.VideoView
+            android:id="@+id/video_view"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
-            android:src="@drawable/head_test" />
+            android:layout_height="200dp"/>
     </RelativeLayout>
 
     <!-- content body layout -->
@@ -70,6 +68,7 @@
 
         <!-- avatar and name part -->
         <RelativeLayout
+            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
 
@@ -82,52 +81,17 @@
                 android:layout_marginBottom="5dp"
                 android:text="课程介绍" />
 
-            <ImageView
-                android:id="@+id/content_avatar"
+            <com.joe.jetpackdemo.widget.ExpandableTextView
+                android:id="@+id/cell_context"
+                android:textSize="16sp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_below="@id/content_avatar_title"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_menu_search" />
-
-            <TextView
-                android:id="@+id/content_name_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@id/content_avatar"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
-                android:layout_toEndOf="@id/content_avatar"
-                android:text="@string/client_name_mock"
-                android:textColor="@color/mainTextColor"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <ImageView
-                android:id="@+id/content_rating_stars"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/content_name_view"
-                android:layout_alignStart="@id/content_name_view"
-                android:src="@drawable/ic_search_bg_24dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/content_rating_stars"
-                android:layout_marginStart="3dp"
-                android:layout_marginBottom="-2dp"
-                android:layout_toEndOf="@id/content_rating_stars"
-                android:text="@string/rating_mock"
-                android:textColor="@color/contentBadgeTitle"
-                android:textSize="12sp" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/arrow" />
+                app:trimLength="25"
+                android:textColor="#000"
+                android:text="扫迪菲娜手动阀是大佛奥适当分解到安防及都是放假度搜if你搜覅删掉就of奥地方技术都你放假到付件收到记得搜房爱神的箭佛is的金佛IDS"
+                android:layout_height="wrap_content" />
 
         </RelativeLayout>
 

@@ -23,8 +23,8 @@ class CourseRepository private constructor(private val courseDao: CourseDao){
     fun getTestingListmodel(): ArrayList<Course>? {
         val items = ArrayList<Course>()
         items.add(Course("计算机科学与技术1","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
-        items.add(Course("计算机科学与技术2","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
-        items.add(Course("计算机科学与技术3","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
+//        items.add(Course("计算机科学与技术2","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
+//        items.add(Course("计算机科学与技术3","ttttt","https://edu-image.nosdn.127.net/7A5D2D50370DE227BAF6E94747C51AF2.jpg","2020-05-21"))
         return items
     }
 

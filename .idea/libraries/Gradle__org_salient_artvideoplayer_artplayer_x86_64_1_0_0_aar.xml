@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: org.salient.artvideoplayer:artplayer-x86_64:1.0.0@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/814b54c91f6972c84c58af67b4b392d1/jetified-artplayer-x86_64-1.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/814b54c91f6972c84c58af67b4b392d1/jetified-artplayer-x86_64-1.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/814b54c91f6972c84c58af67b4b392d1/jetified-artplayer-x86_64-1.0.0/AndroidManifest.xml" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.salient.artvideoplayer/artplayer-x86_64/1.0.0/7207d6d3adc7a698e340d2d6a0f2957233874957/artplayer-x86_64-1.0.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.salient.artvideoplayer/artplayer-x86_64/1.0.0/666fda981c739e52a21071a840addc98146ff40a/artplayer-x86_64-1.0.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
