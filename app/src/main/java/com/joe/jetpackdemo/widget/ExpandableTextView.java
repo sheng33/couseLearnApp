@@ -12,7 +12,7 @@ import com.joe.jetpackdemo.R;
 
 public class ExpandableTextView extends androidx.appcompat.widget.AppCompatTextView {
     private static final int DEFAULT_TRIM_LENGTH = 100;
-    private static final String ELLIPSIS = ".....";
+    private static final String ELLIPSIS = "更多...";
 
     private CharSequence originalText;
     private CharSequence trimmedText;
@@ -30,7 +30,6 @@ public class ExpandableTextView extends androidx.appcompat.widget.AppCompatTextV
         TypedArray typedArray = context.obtainStyledAttributes(attrs, R.styleable.ExpandableTextView);
         this.trimLength = typedArray.getInt(R.styleable.ExpandableTextView_trimLength, DEFAULT_TRIM_LENGTH);
         typedArray.recycle();
-
         setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {

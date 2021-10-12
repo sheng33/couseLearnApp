@@ -81,20 +81,17 @@
                 android:layout_marginBottom="5dp"
                 android:text="课程介绍" />
 
-            <com.joe.jetpackdemo.widget.ExpandableTextView
+            <TextView
                 android:id="@+id/cell_context"
                 android:textSize="16sp"
                 android:layout_width="wrap_content"
                 android:layout_below="@id/content_avatar_title"
                 android:layout_marginStart="10dp"
                 android:layout_marginBottom="2dp"
-                app:trimLength="25"
                 android:textColor="#000"
-                android:text="扫迪菲娜手动阀是大佛奥适当分解到安防及都是放假度搜if你搜覅删掉就of奥地方技术都你放假到付件收到记得搜房爱神的箭佛is的金佛IDS"
+                android:text="移动通信是当今通信领域发展最快、应用最广和最前沿的通信技术。从某种意义上可以说，移动通信系统汇集了当今通信领域内各种先进的技术。为杭州电子科技大学通信类的主干专业课程之一。 "
                 android:layout_height="wrap_content" />
-
         </RelativeLayout>
-
         <!-- divider line -->
         <ImageView
             android:layout_width="match_parent"
@@ -109,85 +106,15 @@
             android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <Button
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/content_from_badge"
-                    style="@style/ContentMainBadgeTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/from_badge" />
-
-                <TextView
-                    android:id="@+id/content_from_address_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_from_badge"
-                    android:layout_alignStart="@id/content_from_badge"
-                    android:text="@string/content_from1_mock"
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/content_from_address_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_from_address_1"
-                    android:layout_alignStart="@id/content_from_address_1"
-                    android:text="@string/content_from2_mock"
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/content_to_badge"
-                    style="@style/ContentMainBadgeTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/to_badge" />
-
-                <TextView
-                    android:id="@+id/content_to_address_1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_to_badge"
-                    android:layout_alignStart="@id/content_to_badge"
-                    android:text="@string/content_to1_mock"
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/content_to_address_2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_to_address_1"
-                    android:layout_alignStart="@id/content_to_address_1"
-                    android:text="@string/content_to2_mock"
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="14sp" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_centerVertical="true"
-                    android:src="@drawable/arrow" />
-
-            </RelativeLayout>
+                android:layout_marginTop="16dp"
+                android:padding="10dp"
+                android:text="课程大纲"
+                android:textAlignment="center"
+                android:textColor="#fff"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -205,77 +132,15 @@
             android:layout_height="wrap_content"
             android:baselineAligned="false"
             android:orientation="horizontal">
-
-            <RelativeLayout
-                android:layout_width="0dp"
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/content_delivery_date_badge"
-                    style="@style/ContentMainBadgeTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/delivery_date_badge" />
-
-                <TextView
-                    android:id="@+id/content_delivery_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_delivery_date_badge"
-                    android:layout_alignStart="@id/content_delivery_date_badge"
-                    android:text="@string/delivery_time_mock"
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/content_delivery_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_delivery_time"
-                    android:layout_alignStart="@id/content_delivery_time"
-                    android:text="@string/delivery_date_mock"
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="14sp" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/content_deadline_badge"
-                    style="@style/ContentMainBadgeTitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentStart="true"
-                    android:text="@string/deadline_badge" />
-
-                <TextView
-                    android:id="@+id/content_deadline_time"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_deadline_badge"
-                    android:layout_alignStart="@id/content_deadline_badge"
-                    android:text="@string/deadline_time_mock"
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/content_deadline_date"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/content_deadline_time"
-                    android:layout_alignStart="@id/content_deadline_time"
-                    android:text=""
-                    android:textColor="@color/mainTextColor"
-                    android:textSize="14sp" />
-            </RelativeLayout>
+                android:padding="10dp"
+                android:background="#99f158"
+                android:text="课程进度"
+                android:textAlignment="center"
+                android:textColor="#000"
+                android:textSize="20sp" />
 
         </LinearLayout>
 
@@ -285,21 +150,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:background="@color/btnRequest"
+            android:background="#6ff9c1"
             android:padding="10dp"
-            android:text="@string/request_btn_text"
+            android:text="加入课程"
             android:textAlignment="center"
             android:textColor="@color/mainTextColor"
             android:textSize="20sp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:text="@string/btn_annotation_mock"
-            android:textAlignment="center"
-            android:textColor="@color/contentBadgeTitle"
-            android:textSize="12sp" />
 
     </LinearLayout>
 

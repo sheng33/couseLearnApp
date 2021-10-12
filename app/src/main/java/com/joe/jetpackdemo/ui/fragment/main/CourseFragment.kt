@@ -1,6 +1,5 @@
 package com.joe.jetpackdemo.ui.fragment.main
 
-import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -16,14 +15,10 @@ import com.joe.jetpackdemo.databinding.CourseFragmentBinding
 import com.joe.jetpackdemo.db.RepositoryProvider
 import com.joe.jetpackdemo.db.data.Course
 import com.joe.jetpackdemo.db.repository.CourseRepository
-import com.joe.jetpackdemo.ui.adapter.CourseAdapter
 import com.joe.jetpackdemo.ui.adapter.CourseCellAdapter
 import com.joe.jetpackdemo.viewmodel.CourseModel
 import com.ramotion.foldingcell.FoldingCell
-import org.salient.artplayer.MediaPlayerManager
-import org.salient.artplayer.player.SystemMediaPlayer
 import java.util.*
-import org.salient.artplayer.ui.VideoView
 
 class CourseFragment : Fragment() {
     lateinit var courseModel: CourseModel
@@ -80,7 +75,6 @@ class CourseFragment : Fragment() {
 
         // set elements to adapter
         theListView.adapter = adapter
-
         // set on click event listener to list view
         theListView.onItemClickListener =
             OnItemClickListener { adapterView, view, pos, l -> // toggle clicked cell state

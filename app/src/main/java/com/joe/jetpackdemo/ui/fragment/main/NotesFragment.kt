@@ -67,12 +67,6 @@ class NotesFragment : Fragment()  {
 //        mRecyclerView.loadMoreFinish(false, true)
     }
 
-    protected fun createDataList(start: Int): List<String> {
-        val strings: MutableList<String> = ArrayList()
-        for (i in start until start + 100) {
-            strings.add("第" + i + "个Item")
-        }
-        return strings
-    }
+
 
 }
