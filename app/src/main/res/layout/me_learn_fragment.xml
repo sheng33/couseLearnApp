@@ -4,19 +4,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent">
+
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
         android:id="@+id/me_learn_refresh_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/me_learn_list"
             android:name="com.joe.jetpackdemo.ui.fragment.main.MeLearnFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100sp"
             android:orientation="vertical"
             app:layoutManager="LinearLayoutManager"
             tools:context=".ui.fragment.main.MeLearnFragment"
-            tools:listitem="@layout/me_learn_list"/>
+            tools:listitem="@layout/me_learn_list" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

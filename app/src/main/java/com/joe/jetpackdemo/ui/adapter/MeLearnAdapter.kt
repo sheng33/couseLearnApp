@@ -31,8 +31,8 @@ class MeLearnAdapter(
     override fun onBindViewHolder(holder: MeLearnAdapter.ViewHolder, position: Int) {
         val item = values[position]
         holder.title.text = item.name
-        holder.learn_time.text = item.createTime
-        holder.progress.text = "99%"
+        holder.progress.text = "第一章第一节移动通信大纲"
+        holder.learn_time.text = "99%"
         //加载网络图片
         Glide.with(holder.itemView).load(item.imgUrl).into(holder.img);
     }

@@ -11,7 +11,7 @@ android {
         applicationId "com.joe.jetpackdemo"
         renderscriptTargetApi 19
         renderscriptSupportModeEnabled true
-        minSdkVersion 21
+        minSdkVersion 26
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -124,4 +124,5 @@ dependencies {
     implementation "org.salient.artvideoplayer:artplayer-arm64:1.1.0"
     implementation "org.salient.artvideoplayer:artplayer-x86_64:1.0.0"
     implementation "com.google.android.exoplayer:exoplayer-hls:2.8.0"
+
 }

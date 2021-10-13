@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView.OnItemClickListener
 import android.widget.ListView
+import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
@@ -18,6 +19,7 @@ import com.joe.jetpackdemo.db.repository.CourseRepository
 import com.joe.jetpackdemo.ui.adapter.CourseCellAdapter
 import com.joe.jetpackdemo.viewmodel.CourseModel
 import com.ramotion.foldingcell.FoldingCell
+import kotlinx.android.synthetic.main.cell_content_layout.*
 import java.util.*
 
 class CourseFragment : Fragment() {
@@ -75,10 +77,16 @@ class CourseFragment : Fragment() {
 
         // set elements to adapter
         theListView.adapter = adapter
+
         // set on click event listener to list view
         theListView.onItemClickListener =
             OnItemClickListener { adapterView, view, pos, l -> // toggle clicked cell state
                 (view as FoldingCell).toggle(false)
+                var layout1: RelativeLayout = view.findViewById(R.id.courselayout1)
+                layout1.setOnClickListener {
+                    view.toggle(false)
+                    adapter.registerToggle(pos)
+                }
                 // register in adapter that state for selected cell is toggled
                 adapter.registerToggle(pos)
             }

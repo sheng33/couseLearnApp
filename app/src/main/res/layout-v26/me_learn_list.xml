@@ -44,18 +44,18 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
                     <TextView
-                        android:layout_weight="1"
                         android:id="@+id/learn_cell_title"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="0sp"
+                        android:layout_weight="2"
                         android:gravity="center"
-                        android:textSize="22sp"
+                        android:textSize="24sp"
                         android:textColor="#000"
                         android:autoSizeMaxTextSize="22sp"
                         android:autoSizeMinTextSize="12sp"
                         android:autoSizeStepGranularity="2sp"
                         android:autoSizeTextType="uniform"
-                        android:text="移动通信"
+                        android:text="程序设计入门----------C语言"
                         android:layout_gravity="center_horizontal"/>
                     <LinearLayout
                         android:layout_weight="2"
