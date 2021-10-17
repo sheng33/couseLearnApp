@@ -1,5 +1,6 @@
 package com.joe.jetpackdemo.db.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.joe.jetpackdemo.db.dao.UserDao
 import com.joe.jetpackdemo.db.data.User
@@ -19,20 +20,23 @@ class UserRepository private constructor(private val userDao: UserDao) {
     /**
      * 根据id选择用户
      */
-    fun findUserById(id:Long):LiveData<User>
+    fun findUserById(id: Long):LiveData<User>
             = userDao.findUserById(id)
 
     /**
      * 登录用户
      */
-    fun login(account: String, pwd: String):LiveData<User?>
-            = userDao.login(account,pwd)
-
+    fun login(account: String, pwd: String):LiveData<User?>{
+        return userDao.login(account,pwd)
+    }
+    fun loginByPhone(account: String, pwd: String):LiveData<User?>{
+        return userDao.loginByPhone(account,pwd)
+    }
     /**
      * 更新用户
      */
     suspend fun updateUser(user:User) {
-        withContext(IO){
+        withContext(IO) {
             userDao.updateUser(user)
         }
     }
@@ -41,8 +45,9 @@ class UserRepository private constructor(private val userDao: UserDao) {
      * 注册一个用户
      */
     suspend fun register(email: String, account: String, pwd: String):Long {
+        Log.d("注册",userDao.findUserById(0).value.toString())
         return withContext(IO) {
-             userDao.insertUser(User(account, pwd, email,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic21.nipic.com%2F20120606%2F5137861_093119370162_2.jpg"))
+             userDao.insertUser(User(account, pwd, email,"https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic21.nipic.com%2F20120606%2F5137861_093119370162_2.jpg","18112345634"))
         }
     }
 

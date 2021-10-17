@@ -20,6 +20,9 @@
         <action
             android:id="@+id/action_meFragment_to_aboutFragment"
             app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_meFragment_to_meInfoFragment"
+            app:destination="@id/meInfoFragment" />
     </fragment>
 
     <fragment
@@ -38,6 +41,9 @@
         android:id="@+id/aboutFragment"
         android:name="com.joe.jetpackdemo.ui.fragment.main.me.AboutFragment"
         android:label="AboutFragment" />
-
+    <fragment
+        android:id="@+id/meInfoFragment"
+        android:name="com.joe.jetpackdemo.ui.fragment.main.me.MeInfoFragment"
+        android:label="MeInfoFragment" />
 
 </navigation>

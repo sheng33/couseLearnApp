@@ -21,6 +21,10 @@ object CustomViewModelProvider {
         val repository: UserRepository = RepositoryProvider.providerUserRepository(context)
         return LoginModelFactory(repository, context)
     }
+    fun providerMeModel(context: Context): MeInfoModelFactory {
+        val repository: UserRepository = RepositoryProvider.providerUserRepository(context)
+        return MeInfoModelFactory(repository, context)
+    }
 
 
 

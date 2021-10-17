@@ -11,6 +11,7 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.joe.jetpackdemo.R
 import com.joe.jetpackdemo.databinding.CourseFragmentBinding
 import com.joe.jetpackdemo.db.RepositoryProvider
@@ -18,12 +19,15 @@ import com.joe.jetpackdemo.db.data.Course
 import com.joe.jetpackdemo.db.repository.CourseRepository
 import com.joe.jetpackdemo.ui.adapter.CourseCellAdapter
 import com.joe.jetpackdemo.viewmodel.CourseModel
+import com.joe.jetpackdemo.viewmodel.MeLearnModel
 import com.ramotion.foldingcell.FoldingCell
 import kotlinx.android.synthetic.main.cell_content_layout.*
 import java.util.*
 
 class CourseFragment : Fragment() {
+
     lateinit var courseModel: CourseModel
+    lateinit var learModel: MeLearnModel
     lateinit var courseRepository: CourseRepository
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,6 +38,7 @@ class CourseFragment : Fragment() {
         val binding: CourseFragmentBinding = DataBindingUtil.inflate(
             inflater, R.layout.course_fragment, container, false
         )
+
         courseRepository = context?.let { RepositoryProvider.providerCourseRepository(it) }!!;
         // get our list view
         val theListView: ListView = binding.mainListView
@@ -42,38 +47,13 @@ class CourseFragment : Fragment() {
 
         // prepare elements to display
         val items: ArrayList<Course>? = courseRepository.getTestingListmodel()
-
+        learModel =  MeLearnModel
         // add custom btn handler to first list item
 
         // add custom btn handler to first list item
-        items!![0].requestBtnClickListener=View.OnClickListener {
-            Toast.makeText(
-                    this.context,
-                    "CUSTOM HANDLER FOR FIRST BUTTON",
-                    Toast.LENGTH_SHORT
-            ).show()
-
-        }
-
-
-        Log.d("SSSS",items!![0].requestBtnClickListener.toString())
-        // create custom adapter that holds elements and their state (we need hold a id's of unfolded elements for reusable elements)
 
         // create custom adapter that holds elements and their state (we need hold a id's of unfolded elements for reusable elements)
-        val adapter = CourseCellAdapter(this.context, items,this.activity)
-
-        // add default btn handler for each request btn on each item if custom handler not found
-
-        // add default btn handler for each request btn on each item if custom handler not found
-        adapter.defaultRequestBtnClickListener= View.OnClickListener {
-            Toast.makeText(
-                this.context,
-                "DEFAULT HANDLER FOR ALL BUTTONS",
-                Toast.LENGTH_SHORT
-            ).show()
-        }
-
-        // set elements to adapter
+        val adapter = CourseCellAdapter(this.context,learModel, items,this.activity)
 
         // set elements to adapter
         theListView.adapter = adapter
