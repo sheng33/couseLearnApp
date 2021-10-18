@@ -5,8 +5,8 @@ import com.joe.jetpackdemo.db.data.Note
 import com.joe.jetpackdemo.dummy.DummyContent
 import java.util.ArrayList
 
-class NotesModel: ViewModel() {
-    val notesList: MutableList<Note> = ArrayList()
+object NotesModel: ViewModel() {
+    var notesList: MutableList<Note> = ArrayList()
     init{
         notesList.add(Note("《格林童话》读后感","今天早上，我是家里最早起来的人，所以我就随手拿了一本《格林童话》，准备看几十多页，然后再下床刷牙洗脸。\n" +
                 "\n" +

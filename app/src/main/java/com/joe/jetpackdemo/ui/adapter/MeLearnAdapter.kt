@@ -42,8 +42,7 @@ class MeLearnAdapter(
         Glide.with(holder.itemView).load(item.imgUrl).into(holder.img);
         holder.del.setOnClickListener {
             AlertDialog.Builder(mainContext)
-                    .setMessage("是否删除")
-                    .setTitle("删除对话框")
+                    .setTitle("是否删除")
                     .setPositiveButton("确定") { _, _ ->
                         model.list.value?.remove(item)
                         Toast.makeText(mainContext, "删除成功", Toast.LENGTH_SHORT).show()

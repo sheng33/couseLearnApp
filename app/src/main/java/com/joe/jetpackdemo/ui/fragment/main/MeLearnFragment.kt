@@ -43,7 +43,6 @@ class MeLearnFragment: Fragment()  {
                 adapter.notifyDataSetChanged()
             }else{
                 Toast.makeText(context, "无数据", Toast.LENGTH_SHORT).show()
-
             }
         })
         Log.d("TT",model.list.value?.size.toString())

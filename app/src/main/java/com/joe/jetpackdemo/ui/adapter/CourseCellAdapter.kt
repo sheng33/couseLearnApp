@@ -28,9 +28,11 @@ import org.salient.artplayer.ui.FullscreenVideoView
 import org.salient.artplayer.ui.VideoView
 import java.util.*
 
-class CourseCellAdapter(context: Context?,meLearnModel:MeLearnModel, objects: List<Course?>?, var activity: FragmentActivity?) : ArrayAdapter<Course>(context, 0, objects) {
+class CourseCellAdapter(context: Context?,
+                        var meLearnModel: MeLearnModel, objects: List<Course?>?, var activity: FragmentActivity?) : ArrayAdapter<Course>(
+    context!!, 0, objects!!
+) {
     private val unfoldedIndexes = HashSet<Int>()
-    var meLearnModel = meLearnModel
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // get item for selected view
         val item = getItem(position)

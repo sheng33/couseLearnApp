@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/imagepicker/Android Sources.kotlin_hoo.imagepicker.iml" filepath="$PROJECT_DIR$/.idea/modules/imagepicker/Android Sources.kotlin_hoo.imagepicker.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ucrop/Android Sources.kotlin_hoo.ucrop.iml" filepath="$PROJECT_DIR$/.idea/modules/ucrop/Android Sources.kotlin_hoo.ucrop.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/kotlin_hoo.iml" filepath="$PROJECT_DIR$/.idea/modules/kotlin_hoo.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/kotlin_hoo.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/kotlin_hoo.app.iml" />
     </modules>
