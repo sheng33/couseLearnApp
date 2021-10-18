@@ -1,6 +1,7 @@
 package com.joe.jetpackdemo.viewmodel
 
 import android.text.Editable
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -17,23 +18,28 @@ class MeModel constructor(
     var user: LiveData<User>? = null
     var name = MutableLiveData("")
     var password = MutableLiveData("")
-
-    fun getUserInfo(id:Long){
+    var userDao: User? = null
+    fun getUserInfo(id: Long) {
         user = repository.findUserById(id)
+        user!!.observeForever {
+            userDao = it
+        }
         name.value = user!!.value?.name
         password.value = user!!.value?.pwd
+
     }
+
     // SimpleWatcher 是简化了的TextWatcher
     val nameWatcher = object : SimpleWatcher() {
-        override  fun afterTextChanged(s: Editable?) {
+        override fun afterTextChanged(s: Editable?) {
             super.afterTextChanged(s)
             user?.value?.name = s.toString()
         }
     }
-    fun updateName(){
-        GlobalScope.launch(Dispatchers.IO){
-            user?.value?.let { repository.updateUser(it) }
 
+    fun updateName() {
+        GlobalScope.launch(Dispatchers.IO) {
+            user?.value?.let { repository.updateUser(it) }
         }
     }
 }

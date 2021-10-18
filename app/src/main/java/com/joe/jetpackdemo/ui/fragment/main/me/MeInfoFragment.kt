@@ -54,6 +54,8 @@ class MeInfoFragment : Fragment() {
         var updateName = binding.root.findViewById<TextView>(R.id.updateName)
         var updateOk = binding.root.findViewById<TextView>(R.id.updateNameOk)
         var nameText = binding.root.findViewById<TextView>(R.id.nameText)
+        var logout = binding.root.findViewById<TextView>(R.id.logout)
+        var updatePassword = binding.root.findViewById<TextView>(R.id.updatePassword)
         updateName.setOnClickListener {
             nameText.isEnabled = true
             nameText.setTextColor(Color.parseColor("#000000"))
@@ -68,6 +70,13 @@ class MeInfoFragment : Fragment() {
             updateOk.visibility = View.GONE
             meModel.updateName()
             Toast.makeText(context, "修改成功", Toast.LENGTH_SHORT).show()
+        }
+        logout.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.action_meInfoFragment_to_login)
+            Toast.makeText(context, "退出登录成功", Toast.LENGTH_SHORT).show()
+        }
+        updatePassword.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.updatePasswrodFragment)
         }
     }
 

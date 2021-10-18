@@ -331,15 +331,15 @@
                 android:paddingLeft="40dp"
                 android:paddingRight="10dp"
                 >
+
                 <TextView
                     android:id="@+id/updatePassword"
-                    android:gravity="center"
                     android:layout_width="70sp"
                     android:layout_height="match_parent"
                     android:background="#03A9F4"
+                    android:gravity="center"
                     android:text="修改密码"
-                    android:textColor="#fff"
-                    />
+                    android:textColor="#fff" />
                 <TextView
                     android:id="@+id/brack"
                     android:gravity="center"

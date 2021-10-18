@@ -7,6 +7,19 @@
 
 
     <fragment
+        android:id="@+id/login"
+        android:name="com.joe.jetpackdemo.ui.fragment.login.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login_fragment">
+        <action
+            android:id="@+id/action_welcome_to_register"
+            app:destination="@id/register"
+            app:enterAnim="@anim/common_slide_in_right"
+            app:exitAnim="@anim/common_slide_out_left"
+            app:popEnterAnim="@anim/common_slide_in_left"
+            app:popExitAnim="@anim/common_slide_out_right" />
+    </fragment>
+    <fragment
         android:id="@+id/courseFragment"
         android:name="com.joe.jetpackdemo.ui.fragment.main.CourseFragment"
         android:label="课程页"
@@ -44,6 +57,16 @@
     <fragment
         android:id="@+id/meInfoFragment"
         android:name="com.joe.jetpackdemo.ui.fragment.main.me.MeInfoFragment"
-        android:label="MeInfoFragment" />
-
+        android:label="MeInfoFragment" >
+        <action
+            android:id="@+id/action_meInfoFragment_to_login"
+            app:destination="@id/login" />
+        <action
+            android:id="@+id/action_meInfoFragment_to_updatePasswrodFragment"
+            app:destination="@id/updatePasswrodFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updatePasswrodFragment"
+        android:name="com.joe.jetpackdemo.ui.fragment.main.me.UpdatePasswrodFragment"
+        android:label="UpdatePasswrodFragment" />
 </navigation>

@@ -79,7 +79,6 @@ class LoginFragment : Fragment() {
             // 利用SafeArgs传递参数
             val action = LoginFragmentDirections
                     .actionWelcomeToRegister()
-                    .setEMAIL("TeaOf1995@Gamil.com")
             findNavController().navigate(action)
         }
     }
