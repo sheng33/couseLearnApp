@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.databinding.DataBindingUtil;
@@ -232,6 +234,7 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
 
 
     }
+    @RequiresApi(api = Build.VERSION_CODES.Q)
     private void initTag(){
         View view = LayoutInflater.from(PublishActivity.this).inflate(R.layout.notes_tag_fragment, null);
 //        view.findViewById(R.id.linear_cancle).setOnClickListener(v -> {
@@ -242,15 +245,21 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
 
         String[] colors = getResources().getStringArray(R.array.color_choices);
         AutoWrapLineLayout autoWrapLineLayout = view.findViewById(R.id.auto_wrap_line_layout);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        params.setMargins(30,10,10,10);
+        autoWrapLineLayout.setLayoutParams(params);
         for (String color : colors) {
             TextView textView = new TextView(this);
             textView.setBackgroundColor(Color.parseColor(color));
-            textView.setWidth(100);
-            textView.setHeight(100);
+            textView.setWidth(120);
+            textView.setHeight(120);
+            textView.setLayoutParams(params);
 //            textVie
             textView.setOnClickListener(v->{
                 colorTag = color;
                 Log.d("颜色：",colorTag);
+                Toast.makeText(view.getContext(),"已选择颜色",Toast.LENGTH_SHORT).show();
             });
             autoWrapLineLayout.addView(textView);
         }

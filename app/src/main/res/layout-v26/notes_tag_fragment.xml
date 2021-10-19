@@ -51,10 +51,10 @@
                     android:id="@+id/auto_wrap_line_layout"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15sp"
-                    android:layout_marginRight="15sp"
-                    autoWrapLineLayout:verticalGap="1dp"
-                    autoWrapLineLayout:horizontalGap="1dp"
+                    android:layout_marginStart="15sp"
+                    android:layout_marginEnd="15sp"
+                    autoWrapLineLayout:verticalGap="10dp"
+                    autoWrapLineLayout:horizontalGap="5dp"
                     autoWrapLineLayout:fillMode = "1">
                 </cn.wolfspider.autowraplinelayout.AutoWrapLineLayout>
         </LinearLayout>
