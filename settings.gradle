@@ -1,1 +1,5 @@
+include ':ucrop'
+include ':imagepicker'
 include ':app'
+project(':imagepicker').projectDir = new File(rootDir, 'imagepicker')
+project(':ucrop').projectDir = new File(rootDir, 'ucrop')

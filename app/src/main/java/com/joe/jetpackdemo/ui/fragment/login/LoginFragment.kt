@@ -3,6 +3,7 @@ package com.joe.jetpackdemo.ui.fragment.login
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -78,7 +79,6 @@ class LoginFragment : Fragment() {
             // 利用SafeArgs传递参数
             val action = LoginFragmentDirections
                     .actionWelcomeToRegister()
-                    .setEMAIL("TeaOf1995@Gamil.com")
             findNavController().navigate(action)
         }
     }
@@ -90,17 +90,37 @@ class LoginFragment : Fragment() {
         binding.lifecycleOwner = this
 
         binding.btnLogin.setOnClickListener {
-            loginModel.login()?.observe(this, Observer { user ->
-                user?.let {
-//                    AppPrefsUtils.putLong(BaseConstant.SP_USER_ID, it.id)
-//                    AppPrefsUtils.putString(BaseConstant.SP_USER_NAME, it.account)
+            loginModel.login()?.observe(viewLifecycleOwner, Observer { it ->
+                if(it!=null){
+                    Log.d("TTT",it.toString())
                     AppPrefsUtils.putLong(BaseConstant.SP_USER_ID, it.id)
                     AppPrefsUtils.putString(BaseConstant.SP_USER_NAME, it.account)
                     //TODO 登录成功逻辑，跳转页面
                     val intent = Intent(context, MainActivity::class.java)
-                    context!!.startActivity(intent)
+                    intent.putExtra("loginId",it.id)
+                    var text = intent.getLongExtra("loginId",0)
+                    Log.d("登录ID", text.toString())
+
+                    requireContext().startActivity(intent)
+
                     Toast.makeText(context, "登录成功！", Toast.LENGTH_SHORT).show()
                 }
+
+            })
+            loginModel.loginByPhone()?.observe(viewLifecycleOwner, Observer { it ->
+                if(it!=null){
+                    Log.d("TTT",it.toString())
+                    AppPrefsUtils.putLong(BaseConstant.SP_USER_ID, it.id)
+                    AppPrefsUtils.putString(BaseConstant.SP_USER_NAME, it.account)
+                    //TODO 登录成功逻辑，跳转页面
+                    val intent = Intent(context, MainActivity::class.java)
+                    intent.putExtra("loginId",it.id)
+                    var text = intent.getLongExtra("loginId",0)
+                    Log.d("登录ID", text.toString())
+                    requireContext().startActivity(intent)
+                    Toast.makeText(context, "登录成功！", Toast.LENGTH_SHORT).show()
+                }
+
             })
         }
 

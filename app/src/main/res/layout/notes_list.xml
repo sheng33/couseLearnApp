@@ -77,7 +77,7 @@
                     android:layout_height="wrap_content"
                     app:mcv_backgroundColor="#75CEF6"
                     android:layout_marginLeft="5dp"
-                    android:text="观后感" />
+                    android:text="" />
             </LinearLayout>
         </LinearLayout>
 

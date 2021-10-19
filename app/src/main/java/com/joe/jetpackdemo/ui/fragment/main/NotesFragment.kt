@@ -15,6 +15,7 @@ import com.joe.jetpackdemo.R
 import com.joe.jetpackdemo.dummy.DummyContent
 import com.joe.jetpackdemo.ui.adapter.MyItemRecyclerViewAdapter
 import com.joe.jetpackdemo.ui.adapter.NotesAdapter
+import com.joe.jetpackdemo.viewmodel.LoginUser
 import com.joe.jetpackdemo.viewmodel.NotesModel
 import com.yanzhenjie.recyclerview.SwipeRecyclerView
 import kotlinx.android.synthetic.main.notes_fragment.*
@@ -33,9 +34,12 @@ class NotesFragment : Fragment()  {
         val view = inflater.inflate(R.layout.notes_fragment, container, false)
         mRefreshLayout = view.findViewById(R.id.refresh_layout)
         var noteLayout = view.findViewById<RecyclerView>(R.id.notesList)
-        var model = NotesModel()
-        noteLayout.adapter = NotesAdapter(model.notesList)
-
+        var model = NotesModel
+        var adapter = context?.let { NotesAdapter(model, it) }
+        noteLayout.adapter = adapter
+        if (adapter != null) {
+            LoginUser.notesAdapter = adapter
+        }
         return view
     }
     //添加动作事件

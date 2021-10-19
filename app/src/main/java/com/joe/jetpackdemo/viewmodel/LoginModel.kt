@@ -1,6 +1,7 @@
 package com.joe.jetpackdemo.viewmodel
 
 import android.text.Editable
+import android.util.Log
 import androidx.lifecycle.*
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
@@ -10,6 +11,10 @@ import com.joe.jetpackdemo.common.listener.SimpleWatcher
 import com.joe.jetpackdemo.db.RepositoryProvider
 import com.joe.jetpackdemo.db.data.User
 import com.joe.jetpackdemo.db.repository.UserRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LoginModel constructor(
     private val repository: UserRepository
@@ -47,9 +52,8 @@ class LoginModel constructor(
 
     // SimpleWatcher 是简化了的TextWatcher
     val nameWatcher = object : SimpleWatcher() {
-        override fun afterTextChanged(s: Editable) {
+        override fun afterTextChanged(s: Editable?) {
             super.afterTextChanged(s)
-
             n.value = s.toString()
             //n.set(s.toString())
             judgeEnable()
@@ -57,7 +61,7 @@ class LoginModel constructor(
     }
 
     val pwdWatcher = object : SimpleWatcher() {
-        override fun afterTextChanged(s: Editable) {
+        override fun afterTextChanged(s: Editable?) {
             super.afterTextChanged(s)
             //p.set(s.toString())
             p.value = s.toString()
@@ -68,9 +72,19 @@ class LoginModel constructor(
     fun login(): LiveData<User?>? {
         val pwd = p.value!!
         val account = n.value!!
-        //val pwd = p.get()!!
-        //val account = n.get()!!
+        GlobalScope.launch {
+            with(Dispatchers.IO){
+                repository.getAllUsers().forEach {
+                    Log.d("所有用户",it.toString())
+                }
+            }
+        }
         return repository.login(account, pwd)
+    }
+    fun loginByPhone(): LiveData<User?>? {
+        val pwd = p.value!!
+        val account = n.value!!
+        return repository.loginByPhone(account, pwd)
     }
 
 //

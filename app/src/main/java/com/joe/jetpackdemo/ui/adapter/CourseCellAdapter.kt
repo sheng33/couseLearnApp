@@ -10,12 +10,14 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.isVisible
 import androidx.fragment.app.FragmentActivity
 import com.bumptech.glide.Glide
 import com.joe.jetpackdemo.R
 import com.joe.jetpackdemo.binding.bindImageFromUrl
 import com.joe.jetpackdemo.db.data.Course
+import com.joe.jetpackdemo.viewmodel.MeLearnModel
 import com.ramotion.foldingcell.FoldingCell
 import org.salient.artplayer.MediaPlayerManager
 import org.salient.artplayer.conduction.PlayerState
@@ -26,10 +28,11 @@ import org.salient.artplayer.ui.FullscreenVideoView
 import org.salient.artplayer.ui.VideoView
 import java.util.*
 
-class CourseCellAdapter(context: Context?, objects: List<Course?>?, var activity: FragmentActivity?) : ArrayAdapter<Course>(context, 0, objects) {
+class CourseCellAdapter(context: Context?,
+                        var meLearnModel: MeLearnModel, objects: List<Course?>?, var activity: FragmentActivity?) : ArrayAdapter<Course>(
+    context!!, 0, objects!!
+) {
     private val unfoldedIndexes = HashSet<Int>()
-    var defaultRequestBtnClickListener: View.OnClickListener? = null
-
     override fun getView(position: Int, convertView: View?, parent: ViewGroup): View {
         // get item for selected view
         val item = getItem(position)
@@ -54,67 +57,70 @@ class CourseCellAdapter(context: Context?, objects: List<Course?>?, var activity
             }
             viewHolder = cell.tag as ViewHolder
         }
+
         if (null == item) return cell
         // bind data from selected element to view through view holder
         bindImageFromUrl(viewHolder.cellImg!!, item.imgUrl)
         //        viewHolder.cellImg.setImageURI(item.getCellImg());
         // set custom btn handler for list item from that item
-       if(item.requestBtnClickListener!=null){
-           run { viewHolder.contentRequestBtn!!.setOnClickListener(item.requestBtnClickListener) }
-       }else{
-           run {
-               // (optionally) add "default" handler if no handler found in item
-               viewHolder.contentRequestBtn!!.setOnClickListener(defaultRequestBtnClickListener)
+       if(item.requestBtnClickListener==null){
+           run { viewHolder.contentRequestBtn!!.setOnClickListener{
+               Toast.makeText(context, "加入成功", Toast.LENGTH_SHORT).show()
+               meLearnModel.addCourse(item)
+               Log.d("join", meLearnModel.list.value?.size.toString())
+               Log.d("join", meLearnModel.toString())
+               Log.d("join", meLearnModel.list.value.toString())
+              }
            }
        }
         val videoView = cell.findViewById(R.id.video_view) as VideoView
-        var mediaPlayer = ExoMediaPlayer(context)
-        val mediaSource = ExoSourceBuilder(context, "http://mooc2vod.stu.126.net/nos/hls/2021/09/02/66/53f1be65-bbb2-4f8f-b056-54113fa51344_7.m3u8")
-            .apply {
-                this.isLooping = false
-                this.cacheEnable = true
-            }
-            .build()
-        mediaPlayer.mediaSource  = mediaSource
-        mediaPlayer.playWhenReady = false
-        videoView.mediaPlayer = mediaPlayer
-        videoView.cover.setImageResource(R.drawable.head_test)
-        videoView.cover.isVisible = true
-        videoView.prepare()
-        var lastClickTime = 0L
-        videoView.setOnClickListener {
-            val clickTime = System.currentTimeMillis()
-            lastClickTime = if (lastClickTime > 0L && clickTime - lastClickTime < 500) {
-                0L
-            } else {
-                clickTime
-            }
-            if(lastClickTime==0L){
-                val fullScreenVideoView = FullscreenVideoView(context = context, origin = videoView)
-                fullScreenVideoView.setOnClickListener {
-                    if(videoView.isPlaying){
-                        mediaPlayer.pause()
-                        videoView.pause()
-                    }else{
-                        mediaPlayer.start()
-                        videoView.start()
-                    }
-                }
-                videoView.mediaPlayer = mediaPlayer
-                //开始播放
-                fullScreenVideoView.prepare()
-                activity?.let { it1 -> MediaPlayerManager.startFullscreen(it1, fullScreenVideoView) }
-            }else{
-                if(videoView.isPlaying){
-                    mediaPlayer.pause()
-                    videoView.pause()
-                }else{
-                    mediaPlayer.start()
-                    videoView.start()
-                }
-            }
-
-        }
+//        var mediaPlayer = ExoMediaPlayer(context)
+//        val mediaSource = ExoSourceBuilder(context, "http://mooc2vod.stu.126.net/nos/hls/2021/09/02/66/53f1be65-bbb2-4f8f-b056-54113fa51344_7.m3u8")
+//            .apply {
+//                this.isLooping = false
+//                this.cacheEnable = true
+//            }
+//            .build()
+//        mediaPlayer.mediaSource  = mediaSource
+//        mediaPlayer.playWhenReady = false
+//        videoView.mediaPlayer = mediaPlayer
+//        videoView.cover.setImageResource(R.drawable.head_test)
+//        videoView.cover.isVisible = true
+//        videoView.prepare()
+//        var lastClickTime = 0L
+//        videoView.setOnClickListener {
+//            val clickTime = System.currentTimeMillis()
+//            lastClickTime = if (lastClickTime > 0L && clickTime - lastClickTime < 500) {
+//                0L
+//            } else {
+//                clickTime
+//            }
+//            if(lastClickTime==0L){
+//                val fullScreenVideoView = FullscreenVideoView(context = context, origin = videoView)
+//                fullScreenVideoView.setOnClickListener {
+//                    if(videoView.isPlaying){
+//                        mediaPlayer.pause()
+//                        videoView.pause()
+//                    }else{
+//                        mediaPlayer.start()
+//                        videoView.start()
+//                    }
+//                }
+//                videoView.mediaPlayer = mediaPlayer
+//                //开始播放
+//                fullScreenVideoView.prepare()
+//                activity?.let { it1 -> MediaPlayerManager.startFullscreen(it1, fullScreenVideoView) }
+//            }else{
+//                if(videoView.isPlaying){
+//                    mediaPlayer.pause()
+//                    videoView.pause()
+//                }else{
+//                    mediaPlayer.start()
+//                    videoView.start()
+//                }
+//            }
+//
+//        }
 
 
         return cell
@@ -141,5 +147,6 @@ class CourseCellAdapter(context: Context?, objects: List<Course?>?, var activity
         var contentRequestBtn: TextView? = null
         var title: TextView? = null
         var videoView: VideoView? = null
+        var addCourse:TextView? = null
     }
 }

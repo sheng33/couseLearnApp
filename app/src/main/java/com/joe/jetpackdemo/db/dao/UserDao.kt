@@ -12,6 +12,8 @@ import com.joe.jetpackdemo.db.data.User
 interface UserDao {
     @Query("SELECT * FROM user WHERE user_account = :account AND user_pwd = :pwd")
     fun login(account:String,pwd:String):LiveData<User?>
+    @Query("SELECT * FROM user WHERE user_phone = :phone AND user_pwd = :pwd")
+    fun loginByPhone(phone:String,pwd:String):LiveData<User?>
     @Query("SELECT * FROM user WHERE id=:id")
     fun findUserById(id:Long):LiveData<User>
     @Query("SELECT * FROM user")

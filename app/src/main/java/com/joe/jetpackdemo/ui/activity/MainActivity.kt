@@ -6,14 +6,13 @@ import android.view.*
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.PopupMenu
-import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.joe.jetpackdemo.R
-import com.joe.jetpackdemo.ui.fragment.main.SignFragment
+import com.joe.jetpackdemo.viewmodel.LoginUser.sharedPreference
 import com.wyt.searchbox.SearchFragment
 import kotlinx.android.synthetic.main.main_activity.*
 
@@ -23,6 +22,8 @@ PopupMenu.OnMenuItemClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
         setExitSharedElementCallback(MaterialContainerTransformSharedElementCallback())
+        val sharedPreferences = getSharedPreferences("art", MODE_PRIVATE)
+        sharedPreference = sharedPreferences
         window.sharedElementsUseOverlay = false
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
@@ -37,6 +38,9 @@ PopupMenu.OnMenuItemClickListener{
             inflater.inflate(R.menu.function_menu, popup.menu)
             popup.setOnMenuItemClickListener(this@MainActivity)
             popup.show()
+        }
+        edit.setOnClickListener {
+            startActivity(Intent(this@MainActivity, PublishActivity::class.java))
         }
         val searchFragment = SearchFragment.newInstance()
         searchFragment.setOnSearchClickListener { keyword -> //这里处理逻辑
@@ -68,8 +72,10 @@ PopupMenu.OnMenuItemClickListener{
                     true
                 }
                 R.id.teaSign -> {
-                    val intent = Intent(this,
-                            SignActivity::class.java)
+                    val intent = Intent(
+                        this,
+                        SignActivity::class.java
+                    )
                     startActivity(intent)
                     Toast.makeText(this, "老师开启签到", Toast.LENGTH_SHORT).show()
                     true
@@ -83,14 +89,14 @@ PopupMenu.OnMenuItemClickListener{
      * Navigation绑定bottomNavigationView
      */
     private fun initBottomNavigationView(
-            bottomNavigationView: BottomNavigationView,
-            navController: NavController
+        bottomNavigationView: BottomNavigationView,
+        navController: NavController
     ) {
         bottomNavigationView.setupWithNavController(navController)
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             when(destination.id){
                 //当处于“我”界面时，显示右上角+号
-                R.id.courseFragment ->{
+                R.id.courseFragment -> {
                     mainTitle.setText("课程列表")
                     search.visibility = View.VISIBLE
                     search0.visibility = View.GONE
@@ -100,7 +106,7 @@ PopupMenu.OnMenuItemClickListener{
                     edit.visibility = View.GONE
                     set.visibility = View.GONE
                 }
-                R.id.meFragment ->{
+                R.id.meFragment -> {
                     mainTitle.setText("个人界面")
                     search.visibility = View.GONE
                     more.visibility = View.GONE
@@ -110,7 +116,7 @@ PopupMenu.OnMenuItemClickListener{
                     edit.visibility = View.GONE
                     set.visibility = View.VISIBLE
                 }
-                R.id.notesFragment ->{
+                R.id.notesFragment -> {
                     mainTitle.setText("笔记")
                     search.visibility = View.GONE
                     search0.visibility = View.VISIBLE
@@ -119,10 +125,8 @@ PopupMenu.OnMenuItemClickListener{
                     more.visibility = View.GONE
                     edit.visibility = View.VISIBLE
                     set.visibility = View.GONE
-
-
                 }
-                R.id.learnFragment ->{
+                R.id.learnFragment -> {
                     mainTitle.setText("我的学习")
                     search.visibility = View.VISIBLE
                     search0.visibility = View.VISIBLE

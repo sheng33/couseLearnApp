@@ -54,7 +54,7 @@
                     android:id="@+id/user_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="张三"
+                    android:text="@{model.user.name}"
                     android:gravity="center_horizontal"
                     android:textColor="@android:color/white"
                     android:textSize="17sp" />
@@ -63,7 +63,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_horizontal"
-                    android:text="182****5882"
+                    android:text="@{model.user.userPhone}"
                     android:textColor="@android:color/white"
                     android:textSize="17sp" />
             </LinearLayout>

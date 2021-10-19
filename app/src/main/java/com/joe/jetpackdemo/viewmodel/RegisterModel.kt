@@ -1,5 +1,6 @@
 package com.joe.jetpackdemo.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -49,6 +50,7 @@ class RegisterModel constructor(
     }
 
     fun register() {
+        Log.d("注册",n.value+" "+p.value)
         viewModelScope.launch {
             repository.register(mail.value!!, n.value!!, p.value!!)
         }

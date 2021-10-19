@@ -49,7 +49,6 @@ class RegisterFragment : Fragment() {
         val safeArgs:RegisterFragmentArgs by navArgs()
         val email = safeArgs.email
         binding.model?.mail?.value = email
-
         binding.lifecycleOwner = this
         binding.model = registerModel
         binding.activity = activity
