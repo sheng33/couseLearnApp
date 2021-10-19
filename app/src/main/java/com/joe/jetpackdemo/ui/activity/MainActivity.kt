@@ -12,6 +12,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.transition.platform.MaterialContainerTransformSharedElementCallback
 import com.joe.jetpackdemo.R
+import com.joe.jetpackdemo.viewmodel.LoginUser.sharedPreference
 import com.wyt.searchbox.SearchFragment
 import kotlinx.android.synthetic.main.main_activity.*
 
@@ -21,6 +22,8 @@ PopupMenu.OnMenuItemClickListener{
     override fun onCreate(savedInstanceState: Bundle?) {
         window.requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS)
         setExitSharedElementCallback(MaterialContainerTransformSharedElementCallback())
+        val sharedPreferences = getSharedPreferences("art", MODE_PRIVATE)
+        sharedPreference = sharedPreferences
         window.sharedElementsUseOverlay = false
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)

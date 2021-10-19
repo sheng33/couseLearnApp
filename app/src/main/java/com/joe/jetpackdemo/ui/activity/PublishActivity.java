@@ -15,7 +15,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -28,6 +31,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.joe.jetpackdemo.databinding.NotePublishBinding;
 import com.joe.jetpackdemo.R;
 import com.joe.jetpackdemo.db.data.Note;
+import com.joe.jetpackdemo.db.data.Tag;
+import com.joe.jetpackdemo.generated.callback.OnClickListener;
 import com.joe.jetpackdemo.ui.adapter.NotesAdapter;
 import com.joe.jetpackdemo.utils.KeyBoardUtils;
 import com.joe.jetpackdemo.utils.RichUtils;
@@ -35,15 +40,19 @@ import com.joe.jetpackdemo.utils.popup.CommonPopupWindow;
 import com.joe.jetpackdemo.utils.RichEditor;
 import com.joe.jetpackdemo.viewmodel.LoginUser;
 import com.joe.jetpackdemo.viewmodel.NotesModel;
+import com.joe.jetpackdemo.viewmodel.TagModel;
 import com.lzy.imagepicker.ImagePicker;
 import com.lzy.imagepicker.bean.ImageItem;
 import com.lzy.imagepicker.ui.ImageGridActivity;
+import com.robertlevonyan.views.chip.Chip;
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.yalantis.ucrop.UCropActivity;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+
+import cn.wolfspider.autowraplinelayout.AutoWrapLineLayout;
 
 import static com.yalantis.ucrop.UCrop.EXTRA_OUTPUT_URI;
 
@@ -57,7 +66,11 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
     private ArrayList<ImageItem> selectImages = new ArrayList<>();
 
     private CommonPopupWindow popupWindow; //编辑图片的pop
+    private CommonPopupWindow tagpWindow; //编辑tag的pop
     private String currentUrl = "";
+    private String colorTag = "";
+    private int tagId = 0;
+    private String tagText = "";
 
     private int isFrom;//0:表示正常编辑  1:表示是重新编辑
 
@@ -69,6 +82,7 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
         binding.setOnClickListener(this);
         rxPermissions = new RxPermissions(this);
         initPop();
+        initTag();
         initEditor();
         if (isFrom == 1) {
             SharedPreferences sharedPreferences = getSharedPreferences("art", MODE_PRIVATE);
@@ -200,8 +214,14 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
 
             }
         });
-
-
+        //设置tag弹窗
+        binding.addTag.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tagpWindow.showBottom(binding.getRoot(),0.7f);
+            }
+        });
+        //设置图片长按弹窗
         binding.richEditor.setImageClickListener(new RichEditor.ImageClickListener() {
             @Override
             public void onImageClick(String imageUrl) {
@@ -212,7 +232,62 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
 
 
     }
+    private void initTag(){
+        View view = LayoutInflater.from(PublishActivity.this).inflate(R.layout.notes_tag_fragment, null);
+//        view.findViewById(R.id.linear_cancle).setOnClickListener(v -> {
+//            popupWindow.dismiss();
+//        });
+        //颜色列表
+        ((EditText)view.findViewById(R.id.tag_name)).requestFocus();
 
+        String[] colors = getResources().getStringArray(R.array.color_choices);
+        AutoWrapLineLayout autoWrapLineLayout = view.findViewById(R.id.auto_wrap_line_layout);
+        for (String color : colors) {
+            TextView textView = new TextView(this);
+            textView.setBackgroundColor(Color.parseColor(color));
+            textView.setWidth(100);
+            textView.setHeight(100);
+//            textVie
+            textView.setOnClickListener(v->{
+                colorTag = color;
+                Log.d("颜色：",colorTag);
+            });
+            autoWrapLineLayout.addView(textView);
+        }
+
+        view.findViewById(R.id.tag_btn).setOnClickListener(v -> {
+            LinearLayout layout = binding.getRoot().findViewById(R.id.tagLayout);
+            Chip addtag = binding.getRoot().findViewById(R.id.addTag);
+            addtag.setVisibility(View.GONE);
+            Chip tag =  new Chip(binding.getRoot().getContext());
+            tag.setText(((EditText)view.findViewById(R.id.tag_name)).getText().toString());
+            tagText = tag.getText().toString();
+            tag.setChipIcon(null);
+            tag.setChipBackgroundColor(Color.parseColor(colorTag));
+            tag.setClosable(true);
+            tag.setOnCloseClickListener(v1->{
+                layout.removeView(tag);
+                addtag.setVisibility(View.VISIBLE);
+            });
+            tagId = TagModel.INSTANCE.addTag(new Tag(tag.getText().toString(),tag.getChipBackgroundColor()));
+            layout.addView(tag);
+            tagpWindow.dismiss();
+            ((EditText)view.findViewById(R.id.tag_name)).setText("");
+        });
+        tagpWindow = new CommonPopupWindow.Builder(PublishActivity.this)
+                .setView(view)
+                .setWidthAndHeight(ViewGroup.LayoutParams.MATCH_PARENT, 850)
+                .setOutsideTouchable(true)//在外不可用手指取消
+                .setAnimationStyle(R.style.pop_animation)//设置popWindow的出场动画
+                .create();
+
+        popupWindow.setOnDismissListener(new PopupWindow.OnDismissListener() {
+            @Override
+            public void onDismiss() {
+                binding.richEditor.setInputEnabled(true);
+            }
+        });
+    }
 
     private void initPop() {
         View view = LayoutInflater.from(PublishActivity.this).inflate(R.layout.newapp_pop_picture, null);
@@ -280,19 +355,12 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
 
             case R.id.txt_publish:
                 SharedPreferences sharedPreferences = getSharedPreferences("art", MODE_PRIVATE);
-                SharedPreferences.Editor edit = sharedPreferences.edit();
-                edit.putString("content", binding.richEditor.getHtml());
-                edit.putString("title", binding.editName.getText().toString().trim());
-                NotesModel.INSTANCE.getNotesList().add(new Note(binding.editName.getText().toString().trim(),binding.richEditor.getHtml(),1, "2020-10-11"));
-                edit.commit();
+                LoginUser.INSTANCE.setSharedPreference(sharedPreferences);
+                NotesModel.INSTANCE.getNotesList().add(new Note(binding.editName.getText().toString().trim(),binding.richEditor.getHtml(),tagId, "2020-10-11"));
                 LoginUser.INSTANCE.getNotesAdapter().refresh();
-
                 Toast.makeText(this, "发布成功", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(this, ShowArtActivity.class);
-                startActivity(intent);
                 finish();
                 break;
-
             case R.id.button_rich_do:
                 //反撤销
                 binding.richEditor.redo();
@@ -405,4 +473,6 @@ public class PublishActivity extends AppCompatActivity implements View.OnClickLi
             }
         }
     }
+
+
 }

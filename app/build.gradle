@@ -134,4 +134,5 @@ dependencies {
     implementation 'com.github.tbruyelle:rxpermissions:0.10.2'
     implementation 'io.reactivex.rxjava2:rxjava:2.1.7'
     implementation project(path: ':ucrop')
+    implementation 'cn.wolfspider:autowraplinelayout:1.0.1'
 }

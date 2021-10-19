@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:autoWrapLineLayout="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:background="@drawable/shape_white_top"
+        android:layout_height="400dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp_15"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15sp"
+                android:orientation="horizontal">
+                <EditText
+                    android:id="@+id/tag_name"
+                    android:layout_weight="5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_20"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="标签名（最大5个字)"
+                    android:maxLength="5"
+                    android:paddingTop="@dimen/dp_15"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/sp_18"
+                    android:textStyle="bold" />
+                <Button
+                    android:id="@+id/tag_btn"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-10sp"
+                    android:layout_marginRight="@dimen/dp_10"
+                    android:gravity="center_horizontal"
+                    android:text="确定"/>
+            </LinearLayout>
+            <cn.wolfspider.autowraplinelayout.AutoWrapLineLayout
+                    android:id="@+id/auto_wrap_line_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginRight="15sp"
+                    autoWrapLineLayout:verticalGap="1dp"
+                    autoWrapLineLayout:horizontalGap="1dp"
+                    autoWrapLineLayout:fillMode = "1">
+                </cn.wolfspider.autowraplinelayout.AutoWrapLineLayout>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
